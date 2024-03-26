@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Analytics Student Survey</title>
+      <!-- Link external stylesheet -->
+      <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Business Analytics Student Survey</h2>
+
+<!-- Question 1 -->
+<p>I am finishing my</p>
+<select id="years_at_iowa" name="years_at_iowa" required>
+    <option value="" disabled selected>Select your year at Iowa</option>
+    <option value="First year at Iowa">First year at Iowa</option>
+    <option value="Second year at Iowa">Second year at Iowa</option>
+    <option value="Third year at Iowa">Third year at Iowa</option>
+    <option value="Fourth year at Iowa">Fourth year at Iowa</option>
+    <option value="Fifth or more year at Iowa">Fifth or more year at Iowa</option>
+</select>
+
+<!-- Question 2 -->
+<p>BAIS core classes I have completed</p>
+<select id="core_classes" name="core_classes[]" multiple>
+    <option value="Information Systems">Information Systems</option>
+    <option value="Operations">Operations</option>
+    <option value="Foundations of Business Analytics">Foundations of Business Analytics</option>
+    <option value="Computational Thinking">Computational Thinking</option>
+    <option value="Database Management">Database Management</option>
+    <option value="Data Wrangling">Data Wrangling</option>
+    <option value="Data Mining">Data Mining</option>
+    <option value="BAIS Capstone">BAIS Capstone</option>
+</select>
+
+<button id="nextButton" class="btn">Next</button>
+</div>
+
+<script>
+    // Add event listener to the button
+    document.getElementById("nextButton").addEventListener("click", function() {
+        // Function to validate form and navigate
+        function validateFormAndNavigate() {
+            var inputs = document.querySelectorAll('input[required], select[required]');
+            for (var i = 0; i < inputs.length; i++) {
+                if (!inputs[i].value) {
+                    alert("Please fill out all required fields.");
+                    return false;
+                }
+            }
+            // Proceed to the next page if all required fields are filled
+            window.location.href = "scottanderson_p3.html";
+        }
+        
+        // Call the validation function when the button is clicked
+        validateFormAndNavigate();
+    });
+</script>
+
+</body>
+</html>
