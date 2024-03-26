@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Analytics Student Survey</title>
+    <!-- Link external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/c15ddd384d.js" crossorigin="anonymous"></script>
+    <style>
+        /* Hide the tooltip text initially */
+        .tooltip .tooltip-text {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Business Analytics Student Survey</h2>
+
+<!-- Question about race/ethnicity -->
+<p>What is your race/ethnicity?</p>
+<div class="tooltip">
+    <i class="fa-solid fa-circle-info" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)" onclick="toggleTooltip(this)"></i>
+    <span class="tooltip-text">This information is collected to ensure diversity and inclusion.</span>
+    <select id="race_ethnicity" required>
+        <option value="">Select</option>
+        <option value="American Indian or Alaska Native">American Indian or Alaska Native</option>
+        <option value="Asian">Asian</option>
+        <option value="Black or African American">Black or African American</option>
+        <option value="Hispanic or Latino">Hispanic or Latino</option>
+        <option value="Native Hawaiian or Other Pacific Islander">Native Hawaiian or Other Pacific Islander</option>
+        <option value="White">White</option>
+        <option value="Other">Other</option>
+    </select>
+</div>
+
+<!-- Question about gender/sex -->
+<p>How do you identify your gender/sex?</p>
+<div class="tooltip">
+    <i class="fa-solid fa-circle-info" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)" onclick="toggleTooltip(this)"></i>
+    <span class="tooltip-text">This information is collected to understand gender representation.</span>
+    <select id="gender" required>
+        <option value="">Select</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+        <option value="Non-binary/genderqueer">Non-binary/genderqueer</option>
+        <option value="Transgender">Transgender</option>
+        <option value="Intersex">Intersex</option>
+        <option value="Prefer not to say">Prefer not to say</option>
+        <option value="Other">Other</option>
+    </select>
+</div>
+
+<button id="submitButton" class="btn">Submit</button>
+</div>
+
+<script>
+    // Add event listener to the button
+    document.getElementById("submitButton").addEventListener("click", function() {
+        // Redirect to specified URL when the button is clicked
+        window.location.href = "scottanderson_ty.html";
+    });
+
+    // Function to show tooltip
+    function showTooltip(icon) {
+        icon.nextElementSibling.style.display = "block";
+    }
+    
+    // Function to hide tooltip
+    function hideTooltip(icon) {
+        icon.nextElementSibling.style.display = "none";
+    }
+
+    // Function to toggle tooltip visibility
+    function toggleTooltip(icon) {
+        var tooltip = icon.nextElementSibling;
+        tooltip.style.display = tooltip.style.display === "block" ? "none" : "block";
+    }
+</script>
